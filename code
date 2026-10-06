@@ -1,0 +1,27 @@
+:root{--bg:#F3F5F9;--panel:#fff;--ink:#16213A;--muted:#5B6578;--line:#D8DEE9;--accent:#2D54E8;--on-accent:#fff;--ok:#1F8A5B;--bad:#C23B30}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1420;--panel:#171E2E;--ink:#E7EBF5;--muted:#9AA5BC;--line:#263049;--accent:#7C97FF;--on-accent:#0F1420;--ok:#4CC38A;--bad:#FF7A6E}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:24px 16px 64px;display:grid;gap:24px}
+@media(min-width:860px){main{grid-template-columns:360px 1fr;align-items:start}}
+h1{font-size:1.5rem;margin:0 0 4px}
+.sub,.meta{color:var(--muted);margin:0;font-size:.9rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:12px}
+label{display:grid;gap:4px;font-size:.9rem;color:var(--muted)}
+textarea,select,input[type=number],input[type=password]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px}
+textarea{min-height:220px;resize:vertical}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.row>*{flex:1}
+.check{display:flex;flex-direction:row;gap:6px;align-items:center;color:var(--ink)}
+button{font:inherit;cursor:pointer;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tabs{display:flex;gap:8px}.tabs button{flex:none}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.card{width:100%;min-height:260px;display:grid;place-items:center;text-align:center;padding:32px;border-radius:14px;border:1px solid var(--line);background:var(--panel);font:1.5rem/1.4 Georgia,"Times New Roman",serif}
+.card[data-flip=true]{background:var(--ink);color:var(--bg)}
+.opts{display:grid;gap:8px}.opts button{text-align:start}.opts button:disabled{opacity:1}
+.opts button[data-s=ok]{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--panel))}
+.opts button[data-s=bad]{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--panel))}
+.err{color:var(--bad);font-size:.9rem}
+@media(prefers-reduced-motion:no-preference){.card{transition:background .25s,color .25s}}
